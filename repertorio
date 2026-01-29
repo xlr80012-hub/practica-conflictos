@@ -1,0 +1,41 @@
+def mostrar_menu():
+    print("\n--- Calculadora Pro ---")
+    print("1. Sumar")
+    print("2. Multiplicar")
+    print("3. Potencia (Elevar un número)")
+    print("4. Salir")
+
+def calculadora():
+    while True:
+        mostrar_menu()
+        opcion = input("\nElige una opción (1-4): ")
+
+        if opcion == '4':
+            print("¡Hasta luego!")
+            break
+
+        if opcion in ['1', '2', '3']:
+            try:
+                num1 = float(input("Ingresa el primer número: "))
+                num2 = float(input("Ingresa el segundo número: "))
+                
+                if opcion == '1':
+                    resultado = num1 + num2
+                    print(f"Resultado: {num1} + {num2} = {resultado}")
+                
+                elif opcion == '2':
+                    resultado = num1 * num2
+                    print(f"Resultado: {num1} * {num2} = {resultado}")
+                
+                elif opcion == '3':
+                    resultado = pow(num1, num2)
+                    print(f"Resultado: {num1} elevado a {num2} es {resultado}")
+            
+            except ValueError:
+                print("Error: Por favor, ingresa solo números válidos.")
+        else:
+            print("Opción no válida, intenta de nuevo.")
+
+# Ejecutar la calculadora
+if __name__ == "__main__":
+    calculadora()
